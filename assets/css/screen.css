@@ -445,6 +445,35 @@ production stylesheet in assets/built/screen.css
     color: rgba(255, 255, 255, 0.8);
 }
 
+.gh-head-title {
+    margin-left: 8px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: inherit;
+    vertical-align: middle;
+}
+
+.has-cover .gh-head-title {
+    color: #fff;
+}
+
+.gh-head-icon {
+    max-height: 32px;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.gh-head-icon-placeholder {
+    font-size: 2rem;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.has-cover .gh-head-icon-placeholder {
+    filter: brightness(0) invert(1);
+}
+
 /* Primary Navigation
 /* ---------------------------------------------------------- */
 
