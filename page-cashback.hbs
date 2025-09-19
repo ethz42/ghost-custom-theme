@@ -10,74 +10,19 @@
         
         <!-- 页面头部 -->
         <header class="cashback-header">
-            <h1 class="cashback-title">返现专区</h1>
-            <p class="cashback-description">通过我们的合作伙伴进行交易，获得丰厚返现奖励</p>
+            <h1 class="cashback-title">
+                <span class="cashback-highlight">返现专区</span>
+            </h1>
+            <p class="cashback-highlight">使用下方链接注册交易所，点击“与我联系”，加入memecoin策略群</p>
         </header>
 
-        <!-- 返现教程轮播 -->
-        <section class="cashback-tutorial">
-            <div class="tutorial-container">
-                <div class="tutorial-slide active">
-                    <div class="tutorial-content">
-                        <h3>第一步：注册账户</h3>
-                        <p>通过我们的专属链接注册合作平台账户</p>
-                        <div class="tutorial-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tutorial-slide">
-                    <div class="tutorial-content">
-                        <h3>第二步：完成交易</h3>
-                        <p>在平台上进行交易，系统自动记录返现</p>
-                        <div class="tutorial-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tutorial-slide">
-                    <div class="tutorial-content">
-                        <h3>第三步：领取返现</h3>
-                        <p>返现自动到账，可随时提现到钱包</p>
-                        <div class="tutorial-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2v20"/>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 轮播指示器 -->
-            <div class="tutorial-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-            </div>
-        </section>
 
         <!-- 分类筛选 -->
         <section class="cashback-filters">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-category="all">ALL</button>
+                <button class="filter-btn" data-category="dex">DEX</button>
                 <button class="filter-btn" data-category="cex">CEX</button>
-                <button class="filter-btn" data-category="defi">DeFi</button>
-                <button class="filter-btn" data-category="gamefi">GameFi</button>
-                <button class="filter-btn" data-category="socialfi">SocialFi</button>
-                <button class="filter-btn" data-category="tools">Tools</button>
-                <button class="filter-btn" data-category="nft">NFT</button>
-                <button class="filter-btn" data-category="others">Others</button>
             </div>
         </section>
 
@@ -85,7 +30,7 @@
         <section class="cashback-grid">
             
             <!-- OKX 卡片 -->
-            <div class="cashback-card" data-category="cex">
+            <div class="cashback-card" data-category="dex">
                 <!-- 卡片头部：交易所图片和名称 -->
                 <div class="card-header">
                     <div class="exchange-info">
@@ -93,8 +38,8 @@
                             <div class="logo-placeholder" style="background: #000; color: #fff;">OKX</div>
                         </div>
                         <div class="exchange-details">
-                            <h3 class="exchange-name">OKX</h3>
-                            <p class="exchange-type">现货交易手续费</p>
+                            <h3 class="exchange-name">OKX DEX</h3>
+                            <p class="exchange-type">交易手续费</p>
                         </div>
                     </div>
                 </div>
@@ -110,21 +55,23 @@
                 <!-- 卡片底部：按钮区域 -->
                 <div class="card-footer">
                     <div class="button-group">
-                        <a href="#" class="btn-primary">立刻使用</a>
-                        <a href="#" class="btn-secondary">查看详情</a>
+                        <a href="https://web3.okx.com/join/88888A10" target="_blank" rel="noopener noreferrer" class="btn-primary">立刻使用</a>
+                        <a href="#" onclick="showDetails('OKX')" class="btn-secondary">查看详情</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Uniswap 卡片 -->
-            <div class="cashback-card" data-category="defi">
+            
+
+            <!-- Binance 卡片 -->
+            <div class="cashback-card" data-category="dex">
                 <div class="card-header">
                     <div class="exchange-info">
                         <div class="exchange-logo">
-                            <div class="logo-placeholder" style="background: #ff007a; color: #fff;">UNI</div>
+                            <div class="logo-placeholder" style="background: #f3ba2f; color: #000;">BNB</div>
                         </div>
                         <div class="exchange-details">
-                            <h3 class="exchange-name">UNISWAP</h3>
+                            <h3 class="exchange-name">币安DEX</h3>
                             <p class="exchange-type">交易手续费</p>
                         </div>
                     </div>
@@ -139,72 +86,54 @@
                 
                 <div class="card-footer">
                     <div class="button-group">
-                        <a href="#" class="btn-primary">立刻使用</a>
-                        <a href="#" class="btn-secondary">查看详情</a>
+                        <a href="https://web3.binance.com/referral?ref=S6YLX9PH" target="_blank" rel="noopener noreferrer" class="btn-primary">立刻使用</a>
+                        <a href="#" onclick="showDetails('Binance')" class="btn-secondary">查看详情</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Binance 卡片 -->
-            <div class="cashback-card" data-category="cex">
-                <div class="card-header">
-                    <div class="exchange-info">
-                        <div class="exchange-logo">
-                            <div class="logo-placeholder" style="background: #f3ba2f; color: #000;">BNB</div>
-                        </div>
-                        <div class="exchange-details">
-                            <h3 class="exchange-name">Binance</h3>
-                            <p class="exchange-type">现货/合约交易手续费</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card-body">
-                    <div class="cashback-info">
-                        <div class="cashback-rate">30%</div>
-                        <div class="cashback-label">现金返还</div>
-                    </div>
-                </div>
-                
-                <div class="card-footer">
-                    <div class="button-group">
-                        <a href="#" class="btn-primary">立刻使用</a>
-                        <a href="#" class="btn-secondary">查看详情</a>
-                    </div>
-                </div>
-            </div>
 
             <!-- Bitget 卡片 -->
             <div class="cashback-card" data-category="cex">
                 <div class="card-header">
                     <div class="exchange-info">
                         <div class="exchange-logo">
-                            <div class="logo-placeholder" style="background: #00d4ff; color: #fff;">BGB</div>
+                            <div class="logo-placeholder" style="background: #141515; color: #fff;">Axiom</div>
                         </div>
                         <div class="exchange-details">
-                            <h3 class="exchange-name">Bitget</h3>
-                            <p class="exchange-type">现货/合约交易手续费</p>
+                            <h3 class="exchange-name">Axiom</h3>
+                            <p class="exchange-type">交易手续费</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card-body">
                     <div class="cashback-info">
-                        <div class="cashback-rate">40%</div>
+                        <div class="cashback-rate">20%</div>
                         <div class="cashback-label">现金返还</div>
                     </div>
                 </div>
                 
                 <div class="card-footer">
                     <div class="button-group">
-                        <a href="#" class="btn-primary">立刻使用</a>
-                        <a href="#" class="btn-secondary">查看详情</a>
+                        <a href="https://axiom.trade/@888888a9" target="_blank" rel="noopener noreferrer" class="btn-primary">立刻使用</a>
+                        <a href="#" onclick="showDetails('Bitget')" class="btn-secondary">查看详情</a>
                     </div>
                 </div>
             </div>
 
         </section>
     </div>
+
+    <div class="site-content">
+        {{!-- All other templates get inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+    </div>
+
+    {{!-- The global footer at the very bottom of the screen --}}
+
+
+</div>
 </main>
 
 {{/post}}
@@ -212,137 +141,14 @@
 <!-- 样式和脚本 -->
 <style>
 /* 返现专区样式 - 基于Ghost主题风格 */
-.cashback-header {
-    text-align: center;
-    padding: max(8vmin, 64px) 0 max(4vmin, 32px);
-}
 
-.cashback-title {
-    font-size: clamp(3.2rem, 5vw, 5.2rem);
-    font-weight: 800;
-    margin: 0 0 16px;
-    color: var(--color-darkgrey);
-    font-family: var(--gh-font-heading, var(--font-sans));
-}
-
-.cashback-description {
-    font-size: 2rem;
-    color: var(--color-secondary-text);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.5;
-}
-
-/* 教程轮播 */
-.cashback-tutorial {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 16px;
-    padding: 48px 32px;
-    margin: 64px 0;
-    color: white;
-    position: relative;
-    overflow: hidden;
-}
-
-.tutorial-container {
-    position: relative;
-    height: 200px;
-}
-
-.tutorial-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: all 0.5s ease;
-}
-
-.tutorial-slide.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.tutorial-content {
-    text-align: center;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.tutorial-content h3 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin: 0 0 16px;
-}
-
-.tutorial-content p {
-    font-size: 1.8rem;
-    margin: 0 0 32px;
-    opacity: 0.9;
-}
-
-.tutorial-icon {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.tutorial-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 32px;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.indicator.active {
-    background: white;
-}
-
-/* 筛选按钮 */
-.cashback-filters {
-    margin: 48px 0 32px;
-}
-
-.filter-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-}
-
-.filter-btn {
-    padding: 12px 24px;
-    border: 1px solid var(--color-border);
-    border-radius: 24px;
-    background: transparent;
-    color: var(--color-darkgrey);
-    font-size: 1.4rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--ghost-accent-color);
-    color: white;
-    border-color: var(--ghost-accent-color);
-}
-
-/* 返现卡片网格 */
+/* 增加卡片间距，让布局更整齐 */
 .cashback-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px; /* 增加间距从24px到32px */
+    margin-top: 40px;
+    padding: 0 16px; /* 添加左右内边距 */
 }
 
 /* 卡片基础样式 */
@@ -355,6 +161,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-bottom: 16px; /* 额外的底部间距 */
 }
 
 .cashback-card:hover {
@@ -364,14 +171,14 @@
 
 /* 卡片头部 */
 .card-header {
-    padding: 20px 20px 16px;
+    padding: 24px 24px 20px; /* 增加内边距 */
     border-bottom: 1px solid var(--border-primary, #e2e8f0);
 }
 
 .exchange-info {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px; /* 增加logo和文字间距 */
 }
 
 .exchange-logo {
@@ -379,8 +186,8 @@
 }
 
 .logo-placeholder {
-    width: 48px;
-    height: 48px;
+    width: 52px; /* 稍微增大logo */
+    height: 52px;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -396,7 +203,7 @@
 .exchange-name {
     font-size: 1.8rem;
     font-weight: 700;
-    margin: 0 0 4px 0;
+    margin: 0 0 6px 0; /* 增加底部间距 */
     color: var(--text-primary, #1e293b);
 }
 
@@ -408,21 +215,22 @@
 
 /* 卡片主体 */
 .card-body {
-    padding: 20px;
+    padding: 24px; /* 增加内边距 */
     flex: 1;
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 .cashback-info {
     text-align: center;
+    width: 100%;
 }
 
 .cashback-rate {
-    font-size: 2.8rem;
+    font-size: 3.2rem; /* 稍微增大返现率字体 */
     font-weight: 800;
     color: #10ac84;
-    margin: 12px 0;
+    margin: 16px 0; /* 增加上下间距 */
 }
 
 .cashback-label {
@@ -433,86 +241,76 @@
 
 /* 卡片底部 */
 .card-footer {
-    padding: 20px;
+    padding: 24px; /* 增加内边距 */
     border-top: 1px solid var(--border-primary, #e2e8f0);
 }
 
 .button-group {
     display: flex;
-    gap: 12px;
+    gap: 16px; /* 增加按钮间距 */
     justify-content: center;
 }
 
-.btn-primary {
+.btn-primary, .btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 12px 24px;
-    background: var(--ghost-accent-color);
-    color: white;
-    border-radius: 8px;
+    padding: 14px 24px; /* 增加按钮内边距 */
+    border-radius: 10px; /* 稍微增大圆角 */
     font-weight: 600;
     text-decoration: none;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
+    font-size: 1.4rem;
+}
+
+.btn-primary {
+    background: var(--ghost-accent-color);
+    color: white;
 }
 
 .btn-primary:hover {
     background: color-mix(in srgb, var(--ghost-accent-color) 80%, black);
     color: white;
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 12px 24px;
     background: var(--color-border);
     color: var(--color-darkgrey);
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease;
 }
 
 .btn-secondary:hover {
-    background: var(--color-border);
-    color: var(--color-darkgrey);
+    background: var(--color-midgrey);
+    color: white;
+    transform: translateY(-1px);
 }
 
-/* 响应式 */
+/* 响应式调整 */
 @media (max-width: 768px) {
     .cashback-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 0 8px;
     }
     
-    .tutorial-container {
-        height: 250px;
+    .card-header, .card-body, .card-footer {
+        padding: 20px;
     }
     
-    .filter-buttons {
-        justify-content: flex-start;
+    .button-group {
+        gap: 12px;
     }
 }
 
-/* 暗色模式 */
-html.dark-mode .cashback-card {
-    background: var(--color-darkmode);
-    border-color: #282b2f;
-}
-
-html.dark-mode .cashback-title {
-    color: #fff;
-}
-
-html.dark-mode .filter-btn {
-    color: #fff;
-    border-color: #282b2f;
-}
-
-html.dark-mode .card-title {
-    color: #fff;
+/* 大屏幕上的优化 */
+@media (min-width: 1200px) {
+    .cashback-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 40px auto 0;
+    }
 }
 </style>
 
@@ -565,4 +363,86 @@ filterBtns.forEach(btn => {
         });
     });
 });
+
+// 显示详情功能
+function showDetails(exchange) {
+    const details = {
+        'OKX': {
+            title: 'OKX 返佣详情',
+            content: '通过我们的专属链接注册OKX，享受20%现货交易手续费返还。返佣每日结算，可随时提现。'
+        },
+        'Uniswap': {
+            title: 'Uniswap 返佣详情', 
+            content: '使用Uniswap进行DEX交易，享受20%手续费返还。基于链上交易自动计算返佣。'
+        },
+        'Binance': {
+            title: 'Binance 返佣详情',
+            content: '注册币安享受30%现货/合约交易手续费返还。全球最大交易所，安全可靠。'
+        },
+        'Bitget': {
+            title: 'Bitget 返佣详情',
+            content: '注册Bitget享受40%现货/合约交易手续费返还。跟单交易领导者，适合新手。'
+        }
+    };
+    
+    const detail = details[exchange];
+    if (detail) {
+        alert(`${detail.title}\n\n${detail.content}`);
+        // 或者你可以创建一个更好看的弹窗
+        // showCustomModal(detail.title, detail.content);
+    }
+}
+
+// 确保联系弹窗功能在cashback页面正常工作
+document.addEventListener('DOMContentLoaded', function() {
+    // 检查联系弹窗元素是否存在
+    const contactModal = document.getElementById('contact-modal');
+    const contactTrigger = document.querySelector('.contact-modal-trigger');
+    
+    // 如果触发按钮存在，添加点击事件监听器
+    if (contactTrigger) {
+        contactTrigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 直接调用弹窗函数
+            if (typeof openContactModal === 'function') {
+                openContactModal();
+            } else {
+                // 备用方案：直接显示弹窗
+                if (contactModal) {
+                    contactModal.style.display = 'flex';
+                    contactModal.style.zIndex = '999999';
+                    document.body.style.overflow = 'hidden';
+                    
+                    // 添加动画效果
+                    setTimeout(() => {
+                        const modalContent = contactModal.querySelector('.contact-modal-content');
+                        if (modalContent) {
+                            modalContent.classList.add('modal-show');
+                        }
+                    }, 10);
+                }
+            }
+        });
+    }
+    
+    // 确保弹窗关闭功能
+    const closeButtons = document.querySelectorAll('.contact-modal-close, .contact-modal-overlay');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (contactModal) {
+                const modalContent = contactModal.querySelector('.contact-modal-content');
+                if (modalContent) {
+                    modalContent.classList.remove('modal-show');
+                }
+                
+                setTimeout(() => {
+                    contactModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        });
+    });
+});
+
 </script>

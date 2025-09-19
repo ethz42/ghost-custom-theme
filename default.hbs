@@ -332,5 +332,87 @@ document.addEventListener('keydown', function(e) {
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
 
+{{!-- 在 </body> 标签前添加弹窗样式 --}}
+<style>
+/* 联系弹窗样式 */
+.contact-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999 !important; /* 非常高的层级 */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.contact-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.contact-modal-content {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 480px;
+    z-index: 2;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.3s cubic
+</style>
+
+<style>
+/* 简单的颜色突出显示"返现专区"菜单项 */
+.gh-head-menu a[href*="cashback"],
+.gh-head-menu a[href="/cashback/"],
+.gh-head-menu a[href="/cashback"] {
+    color: #667eea !important;
+    font-weight: 600 !important;
+}
+
+.gh-head-menu a[href*="cashback"]:hover,
+.gh-head-menu a[href="/cashback/"]:hover,
+.gh-head-menu a[href="/cashback"]:hover {
+    color: #764ba2 !important;
+}
+</style>
+
+<script>
+// 简单的颜色应用
+document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.gh-head-menu a');
+    
+    menuItems.forEach(function(item) {
+        if (item.textContent.includes('返现专区') || 
+            item.textContent.includes('返佣专区') || 
+            item.href.includes('cashback')) {
+            
+            // 只改颜色和字重
+            item.style.color = '#667eea';
+            item.style.fontWeight = '600';
+            
+            item.addEventListener('mouseenter', function() {
+                this.style.color = '#764ba2';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.color = '#667eea';
+            });
+        }
+    });
+});
+</script>
+
 </body>
 </html>
