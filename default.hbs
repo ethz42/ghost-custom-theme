@@ -58,10 +58,10 @@
                     <div class="gh-head-members">
                         {{#unless @member}}
                             {{#unless @site.members_invite_only}}
-                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-head-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                                {{!-- <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a> --}}
+                                <button class="gh-head-button contact-modal-trigger" onclick="openContactModal()">与我联系</button>
                             {{else}}
-                                <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Sign in</a>
+                                {{!-- <a class="gh-head-button" href="#/portal/signin" data-portal="signin">Sign in</a> --}}
                             {{/unless}}
                         {{else}}
                             <a class="gh-head-button" href="#/portal/account" data-portal="account">Account</a>
@@ -81,8 +81,44 @@
     <footer class="site-footer outer">
         <div class="inner">
             <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
+            <nav class="gh-foot-menu">
+    <div class="social-section" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <!-- 标题 -->
+        <h4 style="color: #fff; font-size: 1.6rem; font-weight: 600; margin: 0; letter-spacing: 0.5px;">关注我们</h4>
+        
+        <!-- 社交图标 -->
+        <div class="social-links" style="display: flex; gap: 24px; align-items: center;">
+            <!-- 推特 -->
+            <a href="https://twitter.com/你的推特用户名" target="_blank" rel="noopener" 
+               style="color: #fff; font-size: 24px; text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1);"
+               onmouseover="this.style.background='rgba(29,161,242,0.8)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+            </a>
+            
+            <!-- Telegram -->
+            <a href="https://t.me/你的频道名" target="_blank" rel="noopener" 
+               style="color: #fff; font-size: 24px; text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1);"
+               onmouseover="this.style.background='rgba(0,136,204,0.8)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+            </a>
+            
+            <!-- 微信公众号 -->
+            <a href="/path/to/your/wechat-qr-image.jpg" target="_blank" rel="noopener" 
+               style="color: #fff; font-size: 24px; text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.1);"
+               onmouseover="this.style.background='rgba(7,193,96,0.8)'; this.style.transform='translateY(-2px)'"
+               onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.transform='translateY(0)'">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.298c-.115.379.21.745.593.671l1.463-.28a.64.64 0 0 1 .4.024c1.041.442 2.2.675 3.41.675.22 0 .438-.008.65-.024-.135-.466-.21-.955-.21-1.472 0-3.367 2.744-6.09 6.13-6.09.304 0 .598.022.89.065C15.613 3.714 12.408 2.188 8.691 2.188zm-2.362 2.769a.69.69 0 1 1 0 1.377.69.69 0 0 1 0-1.377zm4.723 0a.69.69 0 1 1 0 1.377.69.69 0 0 1 0-1.377zm5.555 4.816c-2.791 0-5.049 2.199-5.049 4.913 0 2.717 2.258 4.915 5.049 4.915.613 0 1.198-.1 1.717-.284a.473.473 0 0 1 .296-.018l1.14.218c.284.054.537-.2.438-.419l-.304-1.01a.434.434 0 0 1 .157-.488c1.352-1.003 2.218-2.567 2.218-4.414 0-2.714-2.258-4.913-5.049-4.913zm-2.18 1.677a.507.507 0 1 1 0 1.013.507.507 0 0 1 0-1.013zm4.36 0a.507.507 0 1 1 0 1.013.507.507 0 0 1 0-1.013z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
             </nav>
             <div class="gh-powered-by"><a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a></div>
         </div>
@@ -94,6 +130,94 @@
 {{#is "post, page"}}
     {{> "lightbox"}}
 {{/is}}
+
+{{!-- 联系方式弹窗 --}}
+<div id="contact-modal" class="contact-modal" style="display: none;">
+    <div class="contact-modal-overlay" onclick="closeContactModal()"></div>
+    <div class="contact-modal-content">
+        <div class="contact-modal-header">
+            <div class="contact-modal-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+            </div>
+            <h2>联系我</h2>
+            <button class="contact-modal-close" onclick="closeContactModal()">&times;</button>
+        </div>
+        
+        <div class="contact-modal-body">
+            <p class="contact-intro">选择以下任意方式与我取得联系：</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method telegram-method">
+                    <div class="contact-method-main">
+                        <div class="contact-method-icon telegram-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-method-info">
+                            <h3>Telegram</h3>
+                            <p class="contact-id">@Hyperiow1</p>
+                            <button class="contact-method-btn" onclick="openTelegram()">
+                                <span>立即联系</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m9 18 6-6-6-6"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-method wechat-method">
+                    <div class="wechat-horizontal-layout">
+                        <div class="wechat-left">
+                            <div class="contact-method-icon wechat-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.298c-.115.379.21.745.593.671l1.463-.28a.64.64 0 0 1 .4.024c1.041.442 2.2.675 3.41.675.22 0 .438-.008.65-.024-.135-.466-.21-.955-.21-1.472 0-3.367 2.744-6.09 6.13-6.09.304 0 .598.022.89.065C15.613 3.714 12.408 2.188 8.691 2.188zm-2.362 2.769a.69.69 0 1 1 0 1.377.69.69 0 0 1 0-1.377zm4.723 0a.69.69 0 1 1 0 1.377.69.69 0 0 1 0-1.377zm5.555 4.816c-2.791 0-5.049 2.199-5.049 4.913 0 2.717 2.258 4.915 5.049 4.915.613 0 1.198-.1 1.717-.284a.473.473 0 0 1 .296-.018l1.14.218c.284.054.537-.2.438-.419l-.304-1.01a.434.434 0 0 1 .157-.488c1.352-1.003 2.218-2.567 2.218-4.414 0-2.714-2.258-4.913-5.049-4.913zm-2.18 1.677a.507.507 0 1 1 0 1.013.507.507 0 0 1 0-1.013zm4.36 0a.507.507 0 1 1 0 1.013.507.507 0 0 1 0-1.013z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-method-info">
+                                <h3>微信</h3>
+                                <p class="contact-id">ttyyssn</p>
+                                <button class="contact-method-btn" onclick="copyWechatId()">
+                                    <span>复制微信号</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="m5 15-4-4 4-4"></path>
+                                        <path d="M11 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="wechat-right">
+                            <div class="wechat-qr-container">
+                                <div class="qr-code">
+                                    <img src="{{asset "images/62f4fde548ec8a7e1ee73cc725dfe36d.jpg"}}" alt="微信二维码" class="qr-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                                    <div class="qr-fallback" style="display: none;">
+                                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <rect x="7" y="7" width="3" height="3"></rect>
+                                            <rect x="14" y="7" width="3" height="3"></rect>
+                                            <rect x="7" y="14" width="3" height="3"></rect>
+                                            <path d="m14 12 3 3-3 3"></path>
+                                        </svg>
+                                        <p>微信二维码</p>
+                                    </div>
+                                </div>
+                                <p class="qr-tip">扫描添加微信</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-note">
+                <p>💡 推荐使用 Telegram 联系，回复更及时</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
 <script
@@ -110,6 +234,98 @@ $(document).ready(function () {
     });
     // FitVids - Makes video embeds responsive
     $(".gh-content").fitVids();
+});
+
+// 联系弹窗功能
+function openContactModal() {
+    document.getElementById('contact-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    // 添加动画效果
+    setTimeout(() => {
+        document.querySelector('.contact-modal-content').classList.add('modal-show');
+    }, 10);
+}
+
+function closeContactModal() {
+    document.querySelector('.contact-modal-content').classList.remove('modal-show');
+    
+    setTimeout(() => {
+        document.getElementById('contact-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+function openTelegram() {
+    window.open('https://t.me/Hyperiow1', '_blank');
+    showNotification('正在打开 Telegram...', 'info');
+}
+
+function copyWechatId() {
+    const wechatId = 'ttyyssn';
+    
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(wechatId).then(() => {
+            showNotification('微信号已复制到剪贴板！', 'success');
+        }).catch(() => {
+            fallbackCopyWechat(wechatId);
+        });
+    } else {
+        fallbackCopyWechat(wechatId);
+    }
+}
+
+
+function fallbackCopyWechat(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showNotification('微信号已复制到剪贴板！', 'success');
+    } catch (err) {
+        showNotification('复制失败，请手动复制：' + text, 'error');
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showNotification(message, type = 'info') {
+    // 移除现有通知
+    const existingNotification = document.querySelector('.contact-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    const notification = document.createElement('div');
+    notification.className = `contact-notification contact-notification-${type}`;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // 显示动画
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // 3秒后自动消失
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+        }, 300);
+    }, 3000);
+}
+
+// ESC键关闭弹窗
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeContactModal();
+    }
 });
 </script>
 
